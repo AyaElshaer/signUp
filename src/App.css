@@ -1,38 +1,255 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --cairo-font: "Cairo", sans-serif;
+  --main-color:#f28705;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-family: "Cairo", sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.img-container {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.title {
+  color: var(--main-color);
+  font-size: 30px;
+  margin: 20px 0;
+  text-align: center;
+  font-weight: 700;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  gap: 140px;
+}
+
+.group input,
+.address input {
+  width: 400px;
+  height: 50px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background-color: #eee;
+  opacity: 1;
+  color: 18px;
+  text-align: right;
+  font-family: "Cairo", sans-serif;
+}
+
+.group input:focus,
+.address input:focus {
+  outline: 2px solid var(--main-color)!important;
+}
+
+.address-content {
+  display: flex;
+  flex-direction: row;
+  gap: 140px;
+}
+
+.dropdown-wraper {
+  display: flex;
+  gap: 20px;
+}
+
+.form-control {
+  width: 190px;
+  height: 50px;
+  background: #eee;
+  border-radius: 10px;
+  position: relative;
+}
+
+.label {
+  font-family: "Cairo", sans-serif;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translate(-50%, -50%);
+}
+
+.adress-details {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-start;
+}
+
+.MuiFormControl-root {
+  width: 190px;
+  height: 50px;
+}
+
+.MuiInputLabel-shrink {
+  display: none !important;
+}
+
+.MuiInputBase-input {
+  font: var(--cairo-font) !important;
+  padding: 1px 21px 7px !important;
+}
+
+.MuiInputLabel-formControl {
+  top: 50% !important;
+  left: 20% !important;
+  transform: translate(-50%, -50%) scale(1) !important;
+  font-family: var(--cairo-font) !important;
+}
+
+.MuiSelect-icon {
+  top: 50% !important;
+  right: 0 !important;
+  transform: translate(-50%, -50%) scale(1.2) !important;
+}
+
+.MuiSelect-selectMenu {
+  font-family: var(--cairo-font) !important;
+}
+
+.MuiSelect-select:focus {
+  background-color: transparent !important;
+}
+
+.MuiInput-underline:after {
+  display: none;
+}
+
+.MuiInput-underline:before {
+  border-bottom: none !important;
+}
+
+.register button {
+  width: 400px;
+  height: 50px;
+  padding: 10px 0;
+  text-align: center;
+  color: #ffffff;
+  opacity: 1;
+  font-size: 18px;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--main-color);
+}
+
+.register button:hover{
+  cursor: pointer;
+}
+
+.login {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.login a:first-child {
+  color: #195c92;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.login a:last-child {
+  color: #f28705;
+  font-size: 14px;
+}
+
+
+
+@media (max-width: 1000px) {
+  .container {
+    width: 100%;
   }
-  to {
-    transform: rotate(360deg);
+  .img-container {
+    margin: 0 50px;
+    width: 90%;
+  }
+  .img-container img {
+    width: 70%;
+    object-fit: cover;
+  }
+  .form-wrapper {
+    margin: 20px;
+  }
+  .group {
+    width: 100%;
+    flex-direction: column;
+    gap: 50px;
+  }
+  .address{
+    width: 100%;
+  }
+  .group > div {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+  }
+ 
+  .address-content {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
+}
+
+@media (max-width: 500px) {
+  .img-container img {
+    width: 100%;
+  }
+  .group div
+  ,.address {
+    width: 100%;
+  }
+  .register {
+    width: 100%;
+  }
+  .register button {
+    width: 100%;
+  }
+  .address-content{
+    width: 100%;
+  }
+
+  .address input{
+    width: 100%;
+  }
+
+.adress-details{
+  width: 100%;
+  justify-content: center;
+}
+.adress-details >div{
+  width: calc(50% - 10px);
+}
+  .MuiFormControl-root {
+   width: 100%;
   }
 }
